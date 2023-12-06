@@ -1,0 +1,58 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128*/
+
+.section-hero {
+  /* background-image: url(../img/hero.jpg); */
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 20%,
+      rgba(0, 0, 0, 0.2) 60%
+    ),
+    url(../img/hero.jpg);
+  height: 62rem;
+  background-size: cover;
+  background-position: right 0 top 15%;
+  background-repeat: no-repeat;
+}
+
+.header {
+  height: 9.6rem;
+  padding-inline: 4.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.nav__item {
+  list-style: none;
+}
+
+.nav__link:link,
+.nav__link:visited {
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-grey-light-1);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.nav__link:hover,
+.nav__link:active {
+  color: var(--color-primary);
+}
+
+.nav__item .nav__link--active {
+  color: var(--color-blue-5);
+  font-weight: 700;
+}
