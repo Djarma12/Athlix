@@ -59,6 +59,49 @@ a {
 }
 
 /* ////////////////////////// */
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128*/
+.grid{
+  display: grid;
+  margin-inline: auto;
+}
+
+.grid--response{
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 4.8rem;
+  max-width: 120rem;
+}
+
+.grid--4-cols{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ////////////////////////// */
+.section{
+  padding: 6.8rem 3.2rem;
+}
+
+.heading-primary{
+  font-size: 8.6rem;
+  color: var(--color-grey-light-1);
+}
+
+.heading-secondary{
+  font-size: 5.2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.heading-tertiary{
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+/* ////////////////////////// */
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -67,27 +110,55 @@ a {
   transition: all 0.3s;
 }
 
-.btn__secondary:link,
-.btn__secondary:visited {
-  font-size: 1.6rem;
+.btn__primary,
+.btn__primary:link,
+.btn__primary:visited {
+  font-size: 2rem;
+  background-color: var(--color-blue-7);
+  color: var(--color-grey-light-1);
+  padding: 1.6rem 4.8rem;
+}
+
+.btn__primary:hover,
+.btn__primary:active {
   background-color: var(--color-grey-light-1);
   color: var(--color-blue-7);
-  padding: 1.4rem 3.2rem;
+  animation: pulsate 1.6s infinite ease-in-out;
+}
+
+.btn__secondary,
+.btn__secondary:link,
+.btn__secondary:visited {
+  font-size: 2rem;
+  background-color: var(--color-grey-light-1);
+  color: var(--color-blue-7);
+  padding: 1.6rem 4.8rem;
 }
 
 .btn__secondary:hover,
-.btn__secondary:visited {
+.btn__secondary:active {
   background-color: var(--color-blue-7);
   color: var(--color-grey-light-1);
+
+  animation: pulsate 1.6s infinite ease-in-out;
 }
 
-/* .btn__secondary a:link,
-.btn__secondary a:visited {
-  color: var(--color-blue-7);
-  font-weight: 700;
+
+/* ANIMATIONS */
+@keyframes pulsate{
+  0%{
+    transform: scale(1);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 
-.btn__secondary a:hover,
-.btn__secondary a:active {
-  color: var(--color-grey-light-1);
-} */
+@keyframes topBottom{
+  from{
+
+  }
+}
