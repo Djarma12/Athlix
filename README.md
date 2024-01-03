@@ -1,6 +1,6 @@
 # Athlix
 
-![Athlix](css/App-Layout.png)
+![Athlix](img/App-Layout.png)
 
 Athlix gym showcase site.
 
