@@ -19,6 +19,8 @@
       src="https://kit.fontawesome.com/0cf68700b4.js"
       crossorigin="anonymous"
     ></script>
+
+    <script defer src="script.js"></script>
     <title>Athlix</title>
   </head>
   <body>
@@ -54,19 +56,32 @@
       </header>
       <div class="contact">
         <h2 class="heading-tertiary light">Contact us</h2>
-        <form action="" class="contact__form">
+        <form class="contact__form" id="contactForm">
           <label for="" class="label">Name</label>
-          <input type="text" class="input" placeholder="Name" />
-          <label for="" class="label">Email</label>
-          <input type="text" class="input" placeholder="Email" />
-          <label for="" class="label">Message</label>
+          <input
+            type="text"
+            class="input"
+            placeholder="Name"
+            id="contactName"
+          />
+          <label for="contactEmail" class="label">Email</label>
+          <input
+            type="email"
+            class="input"
+            placeholder="Email"
+            id="contactEmail"
+            name="email"
+          />
+          <label for="contactMessage" class="label">Message</label>
           <textarea
-            name=""
-            id=""
+            id="contactMessage"
             rows="7"
             class="input"
             placeholder="Message..."
           ></textarea>
+          <button type="submit" class="btn btn__primary full-width">
+            Send message
+          </button>
         </form>
       </div>
     </section>

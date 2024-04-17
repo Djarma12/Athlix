@@ -60,6 +60,10 @@ a {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.full-width {
+  width: 100%;
+}
+
 .section {
   padding: 6.8rem 3.2rem;
 }

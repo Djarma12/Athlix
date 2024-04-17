@@ -19,6 +19,8 @@
       src="https://kit.fontawesome.com/0cf68700b4.js"
       crossorigin="anonymous"
     ></script>
+
+    <script defer src="script.js"></script>
     <title>Athlix</title>
   </head>
   <body>
@@ -58,49 +60,15 @@
             <a href="mailto:test@test.com" class="btn btn__primary"
               >Make an appointment</a
             >
-            <button class="btn btn__secondary">Details</button>
+            <button class="btn btn__secondary" onclick="detailsFunc()">
+              Details
+            </button>
           </div>
         </div>
       </div>
     </section>
     <section class="section">
-      <div class="grid grid--response">
-        <div class="card">
-          <div class="card__img card__img--personal-training"></div>
-          <div class="card__content">
-            <h3 class="heading-tertiary">Personal trainings</h3>
-            <p class="card__text">
-              Everyone who opts for personal training services will enjoy the
-              unique conditions offered by Fitness Zone. The guarantee of
-              effective and safe exercise is the diagnostics performed in our
-              club.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card__img card__img--group-training"></div>
-          <div class="card__content">
-            <h3 class="heading-tertiary">Group trainings</h3>
-            <p class="card__text">
-              We understand that group trainings are often more fun and
-              therefore easier than others! We have prepared a large number of
-              different programs for women and men.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card__img card__img--individual-training"></div>
-          <div class="card__content">
-            <h3 class="heading-tertiary">Individual trainings</h3>
-            <p class="card__text">
-              Whether you are a recreational person, an athlete, you train
-              regularly or you are just planning to start exercising, in our gym
-              you have everything you need to improve your health, physical
-              shape and achieve the desired appearance!
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="grid grid--response" id="indexCards"></div>
     </section>
 
     <div class="section">
