@@ -1,0 +1,46 @@
+# Omogući mod_rewrite
+RewriteEngine On
+
+# Preusmeravanje na HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Uklanjanje .php ili .html ekstenzija iz URL-a
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# Prikazivanje prilagođene stranice za greške (404)
+ErrorDocument 404 /404.html
+
+# Zaštita od direktnog pristupa skriptama u određenim folderima (npr. /includes)
+<Directory "/includes">
+    Order Allow,Deny
+    Deny from all
+</Directory>
+
+# Cache kontrola za optimizaciju brzine sajta
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 year"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 1 week"
+</IfModule>
+
+# Blokiranje određenih user-agentova (botovi)
+SetEnvIfNoCase User-Agent "BadBot" bad_bot
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
